@@ -10,7 +10,7 @@ st.text("데이터프레임에 적용하고 싶은 것을 자연어로 표현하
 st.subheader("📊 데이터프레임")
 iris = datasets.load_iris()
 df = pd.DataFrame(data=iris.data, columns=iris.feature_names)
-st.dataframe(df)
+st.dataframe(df.head())
 
 
 
@@ -72,10 +72,12 @@ def DataGPT(df):
       ———————————
       """ + initialcode
   while True:
-    msg = input("명령어를 입력하세요: ")
+    msg
     if msg == "stop":
       break
     myexeccode(msg)
   return myget('df')
 
+msg = st.text_input("명령어를 입력하세요")
 
+DataGPT(df)
