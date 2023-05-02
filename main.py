@@ -72,11 +72,10 @@ def DataGPT(df):
       ———————————
       """ + initialcode
   while True:
-    msg = input("명령어를 입력하세요")
+    msg = input("명령어를 입력하세요: ")
     if msg == "stop":
       break
     myexeccode(msg)
   return myget('df')
 
-DataGPT(df)
 
