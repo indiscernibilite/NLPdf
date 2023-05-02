@@ -9,5 +9,4 @@ from sklearn.datasets import load_iris
 
 iris = load_iris() # sample data load
 df = pd.DataFrame(data=iris.data, columns=iris.feature_names)
-df
-st.table(df)
+st.dataframe(df)
