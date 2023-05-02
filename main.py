@@ -73,7 +73,7 @@ def DataGPT(df):
       ———————————
       """ + initialcode
   while True:
-    msg = input("데이터프레임에 적용할 명령어를 입력하세요: ")
+    msg = st.text_input("명령어를 입력하세요.")
     if msg == "stop":
       break
     display(myexeccode(msg))
