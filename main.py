@@ -8,4 +8,4 @@ st.text("데이터프레임에 적용하고 싶은 것을 자연어로 표현하
 from sklearn.datasets import load_iris 
 iris = load_iris()
 df = pd.DataFrame(data=iris.data, columns=iris.feature_names)
-st.table(df)
+st.write(df)
