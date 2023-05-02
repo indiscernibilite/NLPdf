@@ -78,6 +78,5 @@ def DataGPT(df):
     myexeccode(msg)
   return myget('df')
 
-msg = st.text_input("명령어를 입력하세요")
-
-DataGPT(df)
+textbox = st.text_input(label="명령어를 입력하세요", key="msg")
+              
