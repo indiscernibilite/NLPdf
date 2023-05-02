@@ -79,4 +79,6 @@ def DataGPT(df):
   return myget('df')
 
 textbox = st.text_input(label="명령어를 입력하세요", key="msg")
-              
+if msg != "":
+  DataGPT(df)
+ 
