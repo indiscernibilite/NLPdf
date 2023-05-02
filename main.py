@@ -78,7 +78,9 @@ def DataGPT(df):
     myexeccode(msg)
   return myget('df')
 
-textbox = st.text_input(label="명령어를 입력하세요", key="msg")
-if msg != "":
+textbox = st.text_area("명령어를 입력하세요")
+if (textbox):
+  msg=textbox
   DataGPT(df)
+
  
