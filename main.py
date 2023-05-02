@@ -1,6 +1,8 @@
 import streamlit as st
 from sklearn import datasets
 import pandas as pd
+import openai
+import sys
 
 st.title("자연어로 데이터프레임 변환하기")
 st.text("데이터프레임에 적용하고 싶은 것을 자연어로 표현하면 그에 따라 변환해줍니다.\n그만 변환하고 싶으면 'stop'을 작성해주세요.")
@@ -10,9 +12,7 @@ iris = datasets.load_iris()
 df = pd.DataFrame(data=iris.data, columns=iris.feature_names)
 st.dataframe(df)
 
-import openai
-import sys
-from IPython.display import display, HTML
+
 
 openai.api_key = "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"
 
@@ -20,7 +20,6 @@ openai.api_key = "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"
 mylocals = {}
 def myexec(code):
   global mylocals
-  # print("-- Executing:")
   print("# code: \n" + code)
   exec(code, globals(), mylocals)
 def myset(x, v):
@@ -60,7 +59,7 @@ def DataGPT(df):
   # initialize local variables
   mylocals = {}
   myset('df', df)
-  display(df)
+  st.dataframe(df)
   # initialize message history
   mymessages = [
         {"role": "system", "content": "You are a smart python developer."},
