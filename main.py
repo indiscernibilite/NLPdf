@@ -59,7 +59,7 @@ def DataGPT(df):
   # initialize local variables
   mylocals = {}
   myset('df', df)
-  st.dataframe(df)
+  df
   # initialize message history
   mymessages = [
         {"role": "system", "content": "You are a smart python developer."},
@@ -72,10 +72,10 @@ def DataGPT(df):
       ———————————
       """ + initialcode
   while True:
-    msg = st.text_input("명령어를 입력하세요.")
+    msg = input("명령어를 입력하세요")
     if msg == "stop":
       break
-    display(myexeccode(msg))
+    myexeccode(msg)
   return myget('df')
 
 DataGPT(df)
